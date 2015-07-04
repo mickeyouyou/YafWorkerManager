@@ -80,7 +80,7 @@ class WorkerExample
             // 业务逻辑代码
 
 
-            // 可能设计到的请求分发
+            // 涉及到的请求分发
             $sendRequest = new Simple('method', 'module', 'controller', 'action', $payload);
             $result = $this->app->getDispatcher()->dispatch($sendRequest);
             $result = json_decode($result->getBody(), true);
