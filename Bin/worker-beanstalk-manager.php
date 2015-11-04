@@ -9,7 +9,8 @@ $loader->registerLocalNamespace(array('Bin'));
 spl_autoload_register(array($loader, 'autoload'));
 
 // load worker configure file for command line
-$config_dir = "/data/web/jinritemai_com/Backend/Worker/Bin/beanstalk-config.ini";
+// path to beanstalk-config.ini
+$config_dir = "beanstalk-config.ini";
 $configArray = parse_ini_file($config_dir, true);
 // todo  alternative loader beanstalkd-config.ini here
 $mgr = new WorkerBeanstalkManager($loader);

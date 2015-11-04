@@ -29,8 +29,18 @@ cd Bin
 worker-beanstalk-manager stop
 ```
 
-为短信发送服务开启50个进程的配置：
+比如为短信发送服务开启50个进程的配置：
 ```
 ; We are guaranteed 1 workers that can do job Sms
 count = 50
+```
+
+#### 日志监控
+
+默认的日志会放在脚本`worker-beanstalk-manager`中配置的目录中：
+
+```
+PIDDIR=/data/logs/beanstalk
+PIDFILE=${PIDDIR}/manager.pid
+LOGFILE=${PIDDIR}/beanstalk-manager.log
 ```
